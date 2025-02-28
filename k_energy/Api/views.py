@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import User
-from .serializers import RegisterStep1Serializer
+from .serializers import RegisterStep1Serializer , RegisterStep2Serializer
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -14,10 +14,8 @@ class RegisterStep1View(APIView):
         serializer = RegisterStep1Serializer(data=request.data)
         if serializer.is_valid():
             request.session['registration_data'] = serializer.validated_data
-            return Response({'message': 'Etape 1 réussie. Passez à l\'étape 2.'}, status=status.HTTP_200_OK)
+            return Response({'message': 'Étape 1 réussie. Passez à l\'étape 2.'}, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
 
 
 class RegisterStep2View(APIView):
@@ -26,51 +24,65 @@ class RegisterStep2View(APIView):
         if not registration_data:
             return Response({'error': 'Aucune donnée d\'inscription trouvée en session.'}, status=status.HTTP_400_BAD_REQUEST)
 
-        username = request.data.get('username')
-        password = request.data.get('password')
-        confirm_password = request.data.get('confirm_password')
+        serializer = RegisterStep2Serializer(data=request.data)
+        if not serializer.is_valid():
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-        if password != confirm_password:
+        email = serializer.validated_data['email']
+        if not email:
+             return Response({'error': 'Email est requis.'}, status=status.HTTP_400_BAD_REQUEST)
+        
+        password = serializer.validated_data['password']
+        confirmPassword = serializer.validated_data['confirmPassword']
+
+        if password != confirmPassword:
             return Response({'error': 'Les mots de passe ne correspondent pas.'}, status=status.HTTP_400_BAD_REQUEST)
 
-        if User.objects.filter(username=username).exists():
-            return Response({'error': 'Ce nom d\'utilisateur est déjà pris.'}, status=status.HTTP_400_BAD_REQUEST)
+        if User.objects.filter(email=email).exists():
+            return Response({'error': 'Cet email est déjà utilisé.'}, status=status.HTTP_400_BAD_REQUEST)
 
         user = User.objects.create(
             first_name=registration_data['prenom'],
             last_name=registration_data['nom'],
-            email=registration_data['email'],
-            username=username,
+            username=email, 
+            email=email,
             password=make_password(password),
         )
 
         request.session.pop('registration_data', None)
 
         return Response({'message': 'Utilisateur créé avec succès.'}, status=status.HTTP_201_CREATED)
-    
-
 
 
 class LoginView(APIView):
     def post(self, request):
-        username = request.data.get('username')
+        email = request.data.get('email')
         password = request.data.get('password')
 
-        if not username or not password:
-            return Response({'error': 'Nom d\'utilisateur et mot de passe requis.'}, status=status.HTTP_400_BAD_REQUEST)
+        if not email or not password:
+            return Response({'error': 'Email et mot de passe requis.'}, status=status.HTTP_400_BAD_REQUEST)
 
-        user = authenticate(username=username, password=password)
+        try:
+            # Trouver l'utilisateur avec l'email
+            user = User.objects.get(email=email)
+        except User.DoesNotExist:
+            return Response({'error': 'Utilisateur non trouvé.'}, status=status.HTTP_404_NOT_FOUND)
+
+        # Authentifier avec le username (l'email a été stocké comme username)
+        user = authenticate(username=user.username, password=password)
 
         if user is not None:
             login(request, user)
-
             token, created = Token.objects.get_or_create(user=user)
-
             return Response({'message': 'Connexion réussie.', 'token': token.key}, status=status.HTTP_200_OK)
         else:
-            return Response({'error': 'Nom d\'utilisateur ou mot de passe incorrect.'}, status=status.HTTP_401_UNAUTHORIZED)
+            return Response({'error': 'Email ou mot de passe incorrect.'}, status=status.HTTP_401_UNAUTHORIZED)
+
+
 
 class LogoutView(APIView):
     def post(self, request):
         logout(request)
-        return Response({'message': 'Déconnexion réussie.'}, status=status.HTTP_200_OK)        
+        return Response({'message': 'Déconnexion réussie.'}, status=status.HTTP_200_OK)
+
+

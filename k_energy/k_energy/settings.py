@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'Api',
     'rest_framework',
     'rest_framework.authtoken',
+    'corsheaders',
 ]
 
 REST_FRAMEWORK = {
@@ -51,13 +52,23 @@ REST_FRAMEWORK = {
 
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:4200",  # Ajoute l'origine du frontend Angular 
+]
+
+CORS_ALLOW_CREDENTIALS = True  # Autorise les cookies de session
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:4200",  
 ]
 
 ROOT_URLCONF = 'k_energy.urls'
