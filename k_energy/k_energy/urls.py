@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path ,include
 from Api.views import RegisterStep1View, RegisterStep2View,LoginView,LogoutView
 from rest_framework.authtoken.views import obtain_auth_token 
+from accueil import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +28,5 @@ urlpatterns = [
     path('api/login/', LoginView.as_view(), name='login'),
     path('api/logout/', LogoutView.as_view(), name='logout'), 
     path('api/auth/token/', obtain_auth_token, name='api_token_auth'),
+    path('', views.afficher_accueil)
 ]
