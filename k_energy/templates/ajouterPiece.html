@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{% static "css/ajouterPiece.css"%}">
+</head>
+
+<body>
+    <div class="mdp_oublie">
+        <h1>Ajouter une pièce</h1>
+        <div class="input-container">
+            <div class="container">
+                <label for="nomPièce" class="label">Nom de la pièce</label>
+                <input type="text" id="nomPièce" class="champ"/>
+            </div>
+
+            <div class="container">
+                <label for="nombreAppareils" class="label">Nombre d'appareils</label>
+                <input type="number" id="nombreAppareils" class="champ"/>
+            </div>
+        </div>
+        <button>
+          <a href="" class="btn-confirm">Ajouter</a>
+        </button>
+    </div>
+    
+</body>
+
+
