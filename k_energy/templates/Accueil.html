@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,48 +8,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style_searchbar.css' %} ?v={{ time }}">
+    <link rel="stylesheet" href="{% static 'css/style_sidebar.css' %} ?v={{ time }}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 </head>
 <body>
-    <div class="sidebar">
-    {% block content %}
-
-        <div class="rectanglewhite">
-            <span class="titlee" > 
-                <img src="assets/logonobg.png" alt="logo_app" width="50px" height="50px">
-            <span class="secondtitle">eurgui Energy</span>
-            </span>
-            <div class="thesidebar">
-                <div class="accueil common">
-                    <i class="fa-solid fa-house"></i>
-                <a href="" routerLink="/accueil" style="color: inherit; text-decoration: none;">  &nbsp; Accueil</a>
-                </div>
-                <div class="appareil common" routerLink="/appareils">
-                    <i class="fa-solid fa-house-laptop"></i>
-                    &nbsp;Appareils
-                </div>
-                <div class="historique common">
-                    <i class="fa-solid fa-chart-area"></i>
-                <a href="" routerLink="/historique" style="text-decoration: none; color: inherit;"> &nbsp;Historique</a>
-                </div>
-                <div class="notif common">
-                    <i class="fa-solid fa-bell"></i>
-                    &nbsp;Notifications
-                </div>
-                <div class="pieces common" routerLink="/pieces">
-                    <i class="fa-solid fa-couch"></i>
-                    <a href="" routerLink="/pieces" style="text-decoration: none; color: inherit;">  &nbsp; Pièces</a>
-                </div>
-            </div>
-            <div class="deconnexion"> 
-                <i class="fa-solid fa-right-from-bracket"></i>
-                <a routerLink="">Déconnexion</a>
-            </div>
-        </div>
-
-    </div>
+    {% include 'sidebar.html' %}
+    {% include 'searchbar.html'%}
 
 
-    {% endblock content %}
 
 
+
+
+
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+   
 </body>
