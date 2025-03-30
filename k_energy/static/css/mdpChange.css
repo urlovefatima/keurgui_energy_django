@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body div {
+    display: flex;
+    align-items: center;
+    margin-top: 7%;
+}
+
+body div .mdp {
+    box-shadow: 0px 0px 3px #173b61;
+    display: flex;
+    width: 30vw;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    justify-content: center;
+}
+
+body div .mdp .message {
+    color: #173b61;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 30px;
+    text-align: center;
+}
+
+body div .mdp .image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+body div .mdp .image img {
+    width: 30%;
+}
+
+body div .mdp button {
+    width: 100px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: #173b61;
+    color: white;
+    border: none;
+    font-size: larger;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
