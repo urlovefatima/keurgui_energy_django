@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pieces</title>
+    <link rel="stylesheet" href="{% static 'css/style_cons_piece.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/style_searchbar.css' %} ?v={{ time }}">
+    <link rel="stylesheet" href="{% static 'css/style_pieces.css' %} ?v={{ time }}">
+    <link rel="stylesheet" href="{% static 'css/style_sidebar.css' %} ?v={{ time }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    {% include 'searchbar.html'%}
+    {% include 'sidebar.html' %}
+
+    <div class="main-content">
+        <div class="page-sections">
+            <!-- Section Pièces -->
+            <section class="pieces-section">
+                <h3>Pièces</h3>
+                <div class="pieces-content">
+                    <div class="add-piece">
+                        <a href="" class="title">
+                            <i class="fa-solid fa-circle-plus"></i>
+                            <p class="titre">Ajouter une pièce</p>
+                        </a>
+                        <div class="pieces">
+                            <a href="{% url 'cons' %}" class="piece">
+                                <img src="{% static 'img/salon.png' %}" alt="salon" class="img-piece">
+                                <div class="details">
+                                    <p class="nom_piece">Salon</p>
+                                    <p class="surface">20m2</p>
+                                </div>
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </a>
+                            <a href="" class="piece">
+                                <img src="{% static 'img/cuisine.jpg' %}" alt="cuisine" class="img-piece">
+                                <div class="details">
+                                    <p class="nom_piece">Cuisine</p>
+                                    <p class="surface">10m2</p>
+                                </div>
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </a>
+                            <a href="" class="piece">
+                                <img src="{% static 'img/chambre_parent.jpg' %}" alt="parent" class="img-piece">
+                                <div class="details">
+                                    <p class="nom_piece">Chambre parent</p>
+                                    <p class="surface">16m2</p>
+                                </div>
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </a>
+                            <a href="" class="piece">
+                                <img src="{% static 'img/chambre_enfant1.jpg' %}" alt="enfant" class="img-piece">
+                                <div class="details">
+                                    <p class="nom_piece">Chambre enfant 1</p>
+                                    <p class="surface">8m2</p>
+                                </div>
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </a>
+                            <a href="" class="piece">
+                                <img src="{% static 'img/toilette.jpg' %}" alt="toilette" class="img-piece">
+                                <div class="details">
+                                    <p class="nom_piece">Toilette publique</p>
+                                    <p class="surface">12m2</p>
+                                </div>
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </a>
+                            <a href="" class="piece">
+                                <img src="{% static 'img/chambre_enfant1.jpg' %}" alt="enfant" class="img-piece">
+                                <div class="details">
+                                    <p class="nom_piece">Chambre enfant 2</p>
+                                    <p class="surface">10m2</p>
+                                </div>
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="add-appareil">
+                        <a href="" class="title">
+                            <i class="fa-solid fa-circle-plus"></i>
+                            <p class="titre">Ajouter un appareil</p>
+                        </a>
+
+                        <div class="appareils">
+                            <div class="appareil">
+                                <img src="{% static 'img/clim.jpg' %}" alt="clim" class="img-app">
+                                <div class="details">
+                                    <p class="nom_app">Climatiseur</p>
+                                    <p class="piece_app">Salon</p>
+                                </div>
+                                <i class="fa-solid fa-trash"></i>
+                            </div>
+                            <div class="appareil">
+                                <img src="{% static 'img/lampe.webp' %}" alt="lampe" class="img-app">
+                                <div class="details">
+                                    <p class="nom_app">Lampe</p>
+                                    <p class="piece_app">Salon</p>
+                                </div>
+                                <i class="fa-solid fa-trash"></i>
+                            </div>
+                            <div class="appareil">
+                                <img src="{% static 'img/baffle.webp' %}" alt="baffle" class="img-app">
+                                <div class="details">
+                                    <p class="nom_app">Baffle</p>
+                                    <p class="piece_app">Salon</p>
+                                </div>
+                                <i class="fa-solid fa-trash"></i>
+                            </div>
+                            <div class="appareil">
+                                <img src="{% static 'img/humidifier.webp' %}" alt="humidifier" class="img-app">
+                                <div class="details">
+                                    <p class="nom_app">Humidifier</p>
+                                    <p class="piece_app">Salon</p>
+                                </div>
+                                <i class="fa-solid fa-trash"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="comptes">
+                    <p>Wa Keur Gui</p>
+                    <div class="maison">
+                        <div class="compte">
+                            <img src="{% static 'img/homme.jpg' %}" alt="homme" class="img_compte">
+                            <div class="infos">
+                                <p class="nom">Mamadou Falilou Diaw</p>
+                                <p class="email">diawmf@ept.sn</p>
+                            </div>
+                            <i class="fa-solid fa-trash"></i>
+                        </div>
+
+                        <div class="compte">
+                            <img src="{% static 'img/femme.jpg' %}" alt="femme" class="img_compte">
+                            <div class="infos">
+                                <p class="nom">Fatima Dieye</p>
+                                <p class="email">bbfa@ept.sn</p>
+                            </div>
+                            <i class="fa-solid fa-trash"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Section Consommation -->
+            <section class="consommation">
+                <div class="top">
+                    <h3>Salon</h3>
+                    <p class="surface">20 m2</p>
+                </div>
+                <img src="{% static 'img/salon.png' %}" alt="piece" class="img_cons">
+                <div class="cons">
+
+                    <div class="periode">
+                        <div class="titre">
+                            <i class="fa-solid fa-circle"></i>
+                            <p>Journalier</p>
+                        </div>
+                        <div class="content">
+                            <p>Vous avez consommé :</p>
+                            <div class="infos">
+                                <p>1.5 kWh</p>
+                                <i class="fa-solid fa-chart-line"></i>
+                                <span>0.25%</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="periode">
+                        <div class="titre">
+                            <i class="fa-solid fa-circle"></i>
+                            <p>Hebdomadaire</p>
+                        </div>
+                        <div class="content">
+                            <p>Vous avez consommé :</p>
+                            <div class="infos">
+                                <p>10.5 kWh</p>
+                                <i class="fa-solid fa-chart-line"></i>
+                                <span>1.75%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="periode">
+                        <div class="titre">
+                            <i class="fa-solid fa-circle"></i>
+                            <p>Mensuel</p>
+                        </div>
+                        <div class="content">
+                            <p>Vous avez consommé :</p>
+                            <div class="infos">
+                                <p>45 kWh</p>
+                                <i class="fa-solid fa-chart-line"></i>
+                                <span>7.5%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>

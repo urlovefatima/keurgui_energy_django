@@ -1,14 +1,14 @@
 nav {
     background-color: #173B61;
     height: 60px;
-    position: sticky; 
+    position: fixed; 
     top: 0; 
     left: 245px; /* Correspond à la largeur de la sidebar */
     width: calc(100% - 245px); 
     display: flex !important; 
     z-index: 10; 
     max-width: calc(100vw - 245px);
-  }
+}
   
 
   input.form-control {

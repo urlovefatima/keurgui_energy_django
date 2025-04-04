@@ -37,15 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
-    'app'
-=======
-    'Api',
-    'rest_framework',
-    'rest_framework.authtoken',
-    'corsheaders',
-    'accueil'
->>>>>>> 277fa24b8504a51e588224f0988340e85bc393dd
+    'app',
+    'accueil',
+
 ]
 
 REST_FRAMEWORK = {
@@ -80,11 +74,7 @@ ROOT_URLCONF = 'k_energy.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-<<<<<<< HEAD
         'DIRS': [BASE_DIR / 'templates'],
-=======
-        'DIRS': [BASE_DIR / "templates"],
->>>>>>> 277fa24b8504a51e588224f0988340e85bc393dd
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -146,11 +136,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-<<<<<<< HEAD
-STATICFILES_DIRS = [BASE_DIR / 'static']
-=======
+
 STATICFILES_DIRS = [BASE_DIR /"static"]
->>>>>>> 277fa24b8504a51e588224f0988340e85bc393dd
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
