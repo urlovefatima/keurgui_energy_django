@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from app import views
 from accueil.views import afficher_accueil, afficher_splashScreen, ajouter_piece, mdp_change
+from appareil.views import appareilsView
 
 
 urlpatterns = [
@@ -16,5 +17,6 @@ urlpatterns = [
     path('accueil/', afficher_accueil, name="accueil"),
     path('pieces/', views.afficher_pieces, name="pieces"),
     path('cons_piece/', views.afficher_cons_piece, name='cons'),
+    path('appareils/', appareilsView, name='appareils'),
 ]
 
