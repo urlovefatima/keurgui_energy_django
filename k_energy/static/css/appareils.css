@@ -1,0 +1,46 @@
+.cadre_app{
+    flex: 5;
+    max-height: 88vh;
+    margin-left: 2vw;
+    overflow-y: scroll;
+    margin-top: 12vh;
+}
+
+.cadre_app > .cadre_{
+    overflow-y: scroll;
+}
+
+.cadre_app > h2{
+    margin-top: 25px;
+}
+
+.hcons{
+    margin-top: 1rem;
+}
+div::-webkit-scrollbar{
+    display: none;
+}
+.div_1{
+    width: 24vw;
+    box-shadow: 0px 1px 2px gray;
+}
+.div_1:hover{
+    background-color: #d0e3ff3a !important;
+}
+.selectedapp{
+    background-color: #D0E3FF !important;
+}
+
+.centre_{
+    width: calc(100vw - 300px);
+    flex: 4;
+}
+
+.xamouma{
+    overflow-y: hidden;
+}
+
+.search{
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
