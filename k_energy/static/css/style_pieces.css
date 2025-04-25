@@ -195,15 +195,8 @@ body {
 
 /* Section Historique */
 
-
 .history-section {
-    background: blue;
-    border-radius: 8px;
-    padding-top: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    width: calc(100% - 930px);
-    height: 200px;
-    margin-left: 2%;
+     width: calc(100% - 930px); 
 }
 
 

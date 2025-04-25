@@ -1,0 +1,93 @@
+div::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .historique-container {
+    background: #fff;
+    height: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+  }
+  
+  .historique-header {
+    color: #173B61;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+ 
+  .historique-scrollable {
+    max-height: 545px; 
+    overflow-y: auto;
+    padding-right: 5px;
+  }
+  
+  
+  .historique-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .device-name {
+    margin: 0;
+    font-size: 16px;
+    color: #173B61;
+    font-weight: 600;
+  }
+  
+  .device-status {
+    margin: 3px 0 0;
+    font-size: 14px;
+    color: #7f8c8d;
+  }
+  
+  .consumption {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: right;
+  }
+  
+  .variation {
+    font-size: 14px;
+    margin-top: 4px;
+    text-align: right;
+  }
+  
+  
+  .positive {
+    color: #2ecc71;
+  }
+  
+  .negative {
+    color: #e74c3c;
+  }
+  
+  .neutral {
+    color: #95a5a6;
+  }
+  
+  .voir-tout {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .voir-tout a {
+    color: #173B61;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .voir-tout a:hover {
+    text-decoration: underline;
+  }
+  

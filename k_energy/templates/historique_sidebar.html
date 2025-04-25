@@ -1,0 +1,36 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/historique_sidebar.css' %}">
+
+<div class="historique-container">
+  <h3 class="historique-header">Historique</h3>
+
+  <!-- Conteneur défilant -->
+  <div class="historique-scrollable">
+    {% for device in devices %}
+    <div class="historique-item">
+      <div class="historique-info">
+        <p class="device-name">{{ device.name }} ({{ device.location }})</p>
+        <p class="device-status">
+          Actif depuis {{ device.active_since|time:"H\h" }}
+        </p>
+      </div>
+      <div class="historique-stats">
+        <p class="consumption">{{ device.energy_consumption }} kWh</p>
+        <p class="variation 
+          {% if device.percentage_change > 0 %}positive
+          {% elif device.percentage_change < 0 %}negative
+          {% else %}neutral
+          {% endif %}
+        ">
+          {{ device.percentage_change }}%
+        </p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  
+  <div class="voir-tout">
+    <a href="#">Voir tout &rarr;</a>
+  </div>
+</div>
