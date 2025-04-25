@@ -1,0 +1,170 @@
+.thehome{
+   
+    height: 100vh;
+    width: calc(100% - 571px );
+    position: absolute;
+    top: 60px;
+    left: 245px;
+    font-family: "Inter";
+}
+.maisonxjournalier{
+    height: 16rem;
+    width: 100%;
+    display: flex;
+    
+}
+.maison, .journalier{
+    position: relative;
+    height:13rem;
+}
+.maison{
+   margin:auto;
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    color: #091f5b;
+    font-weight: 700;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),0 6px 20px rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    img{
+        border-radius: 10px ;
+        margin: auto;
+        height: 132px;
+        width: 228px;
+
+    }
+    .votremaison{
+        font-size: 16px;
+        margin-top: auto;
+        margin-left: 1rem ;
+    }
+    .info{
+        display: flex;
+        height: 24px; 
+    }
+    .adresse{
+      font-size: 10px;
+      margin-left:8%;
+      margin-bottom: 8%;
+    }
+    .surface{
+        font-size: 13px;
+        color: #f35b04;
+        margin-left: 35%;
+        margin-bottom: 8%;
+    }
+    
+    .circlee{
+        height:19px ;
+        width: 19px;
+        background-color: #091f5b;
+        border-radius: 50%;
+        margin-left: 15%;
+        margin-bottom: 5%;
+    }
+
+}
+.journalier{
+    margin: auto;
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    color: #091f5b;
+    font-weight: 700;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),0 6px 20px rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+}
+
+.commun{
+    width: 23rem;
+    display: flex;
+    margin: auto ;
+    justify-content: space-between;
+    
+}
+.consommation, .coutenergie{
+    background-color: #3d3488;
+    color: white;
+    height: 8rem;
+    width: 10rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    justify-content: space-between;
+    padding: 2%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),0 6px 20px rgba(0, 0, 0, 0.19);
+}
+.themoney, .theenergy{
+    font-size: 24px;
+    text-align: center;
+}
+
+.journalierr{
+    text-align: center;
+    font-weight: bold;
+}
+
+.graphique{
+    height: 500px;
+    width:100%;
+}
+.piecess{
+    height: 248px;
+    padding-left: 50px;
+    
+}
+.automation{
+    height: 330px;
+    padding-left: 50px;
+    padding-top: 20px;
+}
+
+.piecetitle, .automationtitle{
+    font-weight: bold !important;
+    font-size: 36px;
+    color: #091f5b;
+}
+
+
+
+/* piece accueil*/
+
+.lespiecess {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    overflow-x: auto !important;
+    height: 150px !important;
+    max-width: 100%;
+    margin: 0 auto; 
+    scrollbar-width: none !important;
+    padding-right: 20px !important;
+    font-size: 12px;
+    margin-top: 30px;
+    gap: 35px;
+}
+
+.lespiecess img {
+    margin: auto !important;
+    width: 104px !important;
+    height: 63px !important;
+}
+
+.unepiece {
+    width: 166px !important;
+    flex: 0 0 auto !important;
+    border-radius: 10px !important ;
+    overflow: hidden !important;
+    font-size: 12px;
+    box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+.wou img{
+    width: fit-content !important;
+}
+
+.chart-container {
+    padding: 30px;
+    padding-left: 50px;
+}

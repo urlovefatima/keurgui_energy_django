@@ -11,19 +11,108 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style_searchbar.css' %} ?v={{ time }}">
     <link rel="stylesheet" href="{% static 'css/style_sidebar.css' %} ?v={{ time }}">
+    <link rel="stylesheet" href="{% static 'css/style_accueil.css' %} ?v={{ time }}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 </head>
 <body>
     {% include 'sidebar.html' %}
     {% include 'searchbar.html'%}
 
+    <div class="thehome">
+        <div class="maisonxjournalier">
+            <div class="maison">
+                <span class="votremaison">Votre maison,</span>
+                <img src={% static 'img/maison.jpg' %} alt="photo de votre maison" width="228px" height="132px">
+               <div class="info"> 
+                <div class="adresse"> Patte d'Oie Builders,</div>
+                <div class="surface"> 150m²</div>
+                <div class="circlee"></div>
+                </div>
+            </div>
+            <div class="journalier">
+                <div class="journalierr">
+                    journalier
+                    <i class="fa-solid fa-angle-down" style="padding-top: 3%; color:#091b4d;"></i>
+                </div>
+                <div class="commun">
+                    <div class="consommation ">
+                        <span style="font-weight: normal; font-size: 14px;">Consommation</span>
+                        <span class="themoney">200.000
+                            <span style="font-size: 15px;">Fr</span>
+                        </span>
+                        <span style="font-size: 12px;">Ce mois ci,</span>
+                    </div>
+                    <div class="coutenergie ">
+                        <span style="font-weight: normal; font-size: 14px;">Cout énergétique</span>
+                        <span class="theenergy">2500
+                            <span style="font-size: 12px;">kWh</span>
+                        </span>
+                        <span style="font-size: 12px;" >Ce mois ci,</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="graphique mb-3">
+            <div class="chart-container">
+                <canvas id="myChart"></canvas>
+            </div>
+            
+        </div>
+        <div class="piecess ">
+            <div class="piecetitle">
+                Pièces
+            </div>
+            <div class="card-deck lespiecess d-flex px-1">
+                {% for piece in lespieces %}
+                  <div class="card unepiece me-4">
+                      <h5 class="card-title p-2" style="font-size: 14px; color: #091b4d; font-weight: 700;">
+                          {{ piece.nom_piece }}
+                      </h5>
+                      <img class="card-img-top" src="{% static piece.imgUrl %}" alt="{{ piece.nom_piece }}">
+                      <div class="card-body">
+                        <p class="card-text"><small class="text-muted">{{ piece.surface }}</small></p>
+                      </div>
+                  </div>
+                {% endfor %}
+              </div>
+              
+            
+           
+        </div>
+        <div class="automation">
+            <div class="automationtitle">
+                Automatisation
+            </div>
+            <div class="automationcontent">
+
+                <div class="card-deck lespiecess d-flex px-1">
+                    {% if not appauto %}
+                        <div >Aucun appareil trouvé</div>
+                    {% endif %}
+                    {% for app in appauto %}
+                    <div class="card unepiece wou me-4">
+                        <h5 class="card-title p-2" style="font-size: 14px; color: #091b4d; font-weight: 700;">{{app.nom_appareil}}</h5>
+                      <img class="card-img-top" src="{% static app.imgUrl %}" alt="Card image cap">
+                      <div class="card-body">
+                    <p class="card-text"><small class="text-muted">{{app.nom_piece}}</small></p>
+                      </div>
+                    </div>
+                    {% endfor %}
+                    
+                    
+                  </div>
+                
+
+                <app-deviceautomation></app-deviceautomation>
+            </div>
+        </div>
+    </div>
 
 
 
 
-
-
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{% static 'js/graphique.js' %}"></script>
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
