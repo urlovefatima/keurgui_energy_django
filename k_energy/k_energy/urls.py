@@ -18,6 +18,7 @@ urlpatterns = [
     path('pieces/', views.afficher_pieces, name="pieces"),
     path('cons_piece/', views.afficher_cons_piece, name='cons'),
     path('appareils/', appareilsView, name='appareils'),
-    path('historique/', afficher_historique, name = "historique")
+    path('historique/', afficher_historique, name = "historique"),
+    path('notifications/', views.notifications_view, name='notifications'),
 ]
 
