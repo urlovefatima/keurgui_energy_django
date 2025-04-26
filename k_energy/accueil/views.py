@@ -36,3 +36,7 @@ def ajouter_piece(request):
 
 def mdp_change(request):
     return render(request, "mdpChange.html")
+
+
+def afficher_historique(request):
+    return render(request, "historique.html")
