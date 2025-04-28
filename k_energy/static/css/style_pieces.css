@@ -85,6 +85,10 @@ body {
     scrollbar-width: none;
 }
 
+.piece:hover, .appareil:hover{
+    background-color: #91bae6;
+}
+
 .pieces .piece, .appareils .appareil{
     display: flex;
     border-bottom: 0.3px solid #D0E3FF;

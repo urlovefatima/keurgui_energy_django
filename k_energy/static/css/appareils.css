@@ -1,3 +1,6 @@
+*{
+    color: #173B61;
+}
 .cadre_app{
     flex: 5;
     max-height: 88vh;
