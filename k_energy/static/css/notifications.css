@@ -11,6 +11,10 @@ div::-webkit-scrollbar {
     overflow-y: auto;
   }
   
+  .dashboard{
+    max-width: calc(100vw - 245px);
+  }
+
   .historique-header {
     color: #173B61;
     font-weight: bold;

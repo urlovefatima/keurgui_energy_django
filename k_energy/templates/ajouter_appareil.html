@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter Piece</title>
+    <link rel="stylesheet" href="{% static 'css/style_password.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+<body>
+    <div class="container-reset">
+        {% csrf_token %}
+        <h1>Nouveau mot de passe</h1>
+        <form action="" method="post">
+            <div class="form-group">
+                <label for="">Nouveau mot de passe</label>
+                <input type="password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="">Confirmer mot de passe</label>
+                <input type="password" required>
+            </div>
+            <a href="{% url 'connexion' %}" class="confirm-link">Confirmer</a>
+        </form>
+
+        <div class="footer">
+            <a href="{% url 'connexion' %}">
+                <i class="fa-solid fa-arrow-left"></i>
+                <p>Retourner à la page de connexion</p>
+            </a>
+            
+        </div>
+    </div>
+</body>
+</html>

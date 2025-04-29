@@ -26,102 +26,42 @@
                 <h3>Pièces</h3>    
                 <div class="pieces-content">
                     <div class="add-piece">
-                        <a href="" class="title">
+                        <a href="{% url "ajout_piece" %}" class="title">
                             <i class="fa-solid fa-circle-plus"></i>
                             <p class="titre">Ajouter une pièce</p>
                         </a>
                         <div class="pieces">
+                            {% for piece in pieces %}
                             <a href="{% url 'cons' %}" class="piece">
-                                <img src="{% static 'img/salon.png' %}" alt="salon" class="img-piece">
+                                <img src="{{piece.img.url}}" alt="salon" class="img-piece">
                                 <div class="details">
-                                    <p class="nom_piece">Salon</p>
-                                    <p class="surface">20m2</p>
+                                    <p class="nom_piece">{{piece.nom}}</p>
+                                    <p class="surface">{{piece.surface}}m2</p>
                                 </div>
                                 <i class="fa-solid fa-ellipsis"></i>
                             </a>
-                            <a href="" class="piece">
-                                <img src="{% static 'img/cuisine.jpg' %}" alt="cuisine" class="img-piece">
-                                <div class="details">
-                                    <p class="nom_piece">Cuisine</p>
-                                    <p class="surface">10m2</p>
-                                </div>
-                                <i class="fa-solid fa-ellipsis"></i>
-                            </a>
-                            <a href="" class="piece">
-                                <img src="{% static 'img/chambre_parent.jpg' %}" alt="parent" class="img-piece">
-                                <div class="details">
-                                    <p class="nom_piece">Chambre parent</p>
-                                    <p class="surface">16m2</p>
-                                </div>
-                                <i class="fa-solid fa-ellipsis"></i>
-                            </a>
-                            <a href="" class="piece">
-                                <img src="{% static 'img/chambre_enfant1.jpg' %}" alt="enfant" class="img-piece">
-                                <div class="details">
-                                    <p class="nom_piece">Chambre enfant 1</p>
-                                    <p class="surface">8m2</p>
-                                </div>
-                                <i class="fa-solid fa-ellipsis"></i>
-                            </a>
-                            <a href="" class="piece">
-                                <img src="{% static 'img/toilette.jpg' %}" alt="toilette" class="img-piece">
-                                <div class="details">
-                                    <p class="nom_piece">Toilette publique</p>
-                                    <p class="surface">12m2</p>
-                                </div>
-                                <i class="fa-solid fa-ellipsis"></i>
-                            </a>
-                            <a href="" class="piece">
-                                <img src="{% static 'img/chambre_enfant1.jpg' %}" alt="enfant" class="img-piece">
-                                <div class="details">
-                                    <p class="nom_piece">Chambre enfant 2</p>
-                                    <p class="surface">10m2</p>
-                                </div>
-                                <i class="fa-solid fa-ellipsis"></i>
-                            </a>
+                            {% endfor %}
                         </div>
      
                     </div>
 
                     <div class="add-appareil">
-                        <a href="" class="title">
+                        <a href="{% url "ajout_appareil" %}" class="title">
                             <i class="fa-solid fa-circle-plus"></i>
                             <p class="titre">Ajouter un appareil</p>
                         </a>
 
                         <div class="appareils">
-                            <div class="appareil">
-                                <img src="{% static 'img/clim.jpg' %}" alt="clim" class="img-app">
-                                <div class="details">
-                                    <p class="nom_app">Climatiseur</p>
-                                    <p class="piece_app">Salon</p>
+                            {% for appareil in appareils%}
+                                <div class="appareil">
+                                    <img src="{{ appareil.img.url }}" alt="clim" class="img-app">
+                                    <div class="details">
+                                        <p class="nom_app">{{ appareil.nom }}</p>
+                                        <p class="piece_app">{{ appareil.piece }}</p>
+                                    </div>
+                                    <i class="fa-solid fa-trash"></i>
                                 </div>
-                                <i class="fa-solid fa-trash"></i>
-                            </div>
-                            <div class="appareil">
-                                <img src="{% static 'img/lampe.webp' %}" alt="lampe" class="img-app">
-                                <div class="details">
-                                    <p class="nom_app">Lampe</p>
-                                    <p class="piece_app">Salon</p>
-                                </div>
-                                <i class="fa-solid fa-trash"></i>
-                            </div>
-                            <div class="appareil">
-                                <img src="{% static 'img/baffle.webp' %}" alt="baffle" class="img-app">
-                                <div class="details">
-                                    <p class="nom_app">Baffle</p>
-                                    <p class="piece_app">Salon</p>
-                                </div>
-                                <i class="fa-solid fa-trash"></i>
-                            </div>
-                            <div class="appareil">
-                                <img src="{% static 'img/humidifier.webp' %}" alt="humidifier" class="img-app">
-                                <div class="details">
-                                    <p class="nom_app">Humidifier</p>
-                                    <p class="piece_app">Salon</p>
-                                </div>
-                                <i class="fa-solid fa-trash"></i>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
 

@@ -29,17 +29,17 @@
                 {% csrf_token %}
 
                 <div class="form-group">
-                    <input type="email" placeholder="Email" name="Email" required>
+                    <input type="email" placeholder="Email" name="email" required>
                 </div>
                 
                 <div class="form-group">
-                    <input type="password" placeholder="Mot de passe" name="mdp" required>
+                    <input type="password" placeholder="Mot de passe" name="password" required>
                 </div>
                 
                 <div class="form-footer">
                     <a href="{% url 'mdp' %}" class="link-mdp">Mot de passe oublié ?</a>
                 </div> 
-                <a href="{% url 'accueil' %}" class="btn-con">Connexion</a>
+                <button type="submit" class="btn-con">Connexion</button>
             </form>
             
             <div class="signup-link">

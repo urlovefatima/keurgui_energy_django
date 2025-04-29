@@ -23,7 +23,7 @@ body {
 /* Section Pièces */
 
 .pieces-section{
-    min-width: 930px;
+    min-width: 60vw;
     height: 100%;
 }
 
@@ -83,6 +83,10 @@ body {
     max-height: 450px;
     overflow-y: auto;
     scrollbar-width: none;
+}
+
+.piece:hover, .appareil:hover{
+    background-color: #91bae6;
 }
 
 .pieces .piece, .appareils .appareil{
