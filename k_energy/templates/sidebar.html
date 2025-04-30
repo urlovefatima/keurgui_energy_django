@@ -21,7 +21,7 @@
         </div>
         <div class="historique common">
             <i class="fa-solid fa-chart-area"></i>
-            <a href="" style="text-decoration: none; color: inherit;"> &nbsp;Historique</a>
+            <a href="{% url 'historique' %}" style="text-decoration: none; color: inherit;"> &nbsp;Historique</a>
         </div>
         <div class="notif common">
             <i class="fa-solid fa-bell"></i>
@@ -34,7 +34,7 @@
     </div>
     <div class="deconnexion"> 
         <i class="fa-solid fa-right-from-bracket " style="color: #091b4d;"></i>
-        <a href="{% url 'connexion'%}" style="text-decoration: none; color: inherit;"> Déconnexion </a>
+        <a href="{% url 'logout'%}" style="text-decoration: none; color: inherit;"> Déconnexion </a>
     </div>
 </div>
 

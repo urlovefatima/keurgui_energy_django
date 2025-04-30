@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %} ?v={{ time }}" >
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style_searchbar.css' %}?v={{ time }}">
+    <link rel="stylesheet" href="{% static 'css/style_sidebar.css' %}?v={{ time }}">
+    <link rel="stylesheet" href="{% static 'css/style_historique.css' %}?v={{ time }}">
+   
+</head>
+
+<body>
+
+    {% include 'sidebar.html' %}
+    {% include 'searchbar.html'%}
+
+    <div class="historiquecontent">
+        <div class="historiquetitle p-3 ps-4">Historique</div>
+        <div class="graphiques mx-5">
+            <div class="graphiquetitle p-2">Votre consommation,</div>
+        <div class="thegraphiques d-flex">
+            <div class="premiergraphique ">
+                <div class="graphiquecontent">
+                    <canvas id="myFirstChart"></canvas>
+                </div>
+            </div>
+            <div class="deuxiemegraphique">
+                <div class="graphiquecontent">
+                    <canvas id="mySecondChart"></canvas>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="consommationcout my-4">
+            <div class="consommation mx-5">
+                <div class="appmensuel">
+                    <span class="vosappareils "><a style="text-decoration: none; color: #091b4d;" href="">Vos appareils
+                        <i class="fa-solid fa-circle-arrow-right"  style=" color:#091b4d;"></i></a>
+                    </span>
+                    <span class="mensuel ">mensuel
+                        <i class="fa-solid fa-angle-down" style="padding-top: 4%; color:#091b4d;"></i>
+                    </span>
+                </div>
+
+                <div class="common1 mt-3">
+                    <div class="cons">
+                        <span style=" font-size: 14px;">Vous avez consommé</span>
+                        <span class="theenergy" style="text-align: center; font-size: 48px;">350
+                        <span style="font-size: 20px;">kWh</span>
+                        </span>
+                    <span style="font-size: 13px; text-align: right;" >Ce mois ci,</span>
+                    </div>
+                    <div class="cost">
+                        <span style=" font-size: 14px;">Consommation</span>
+                        <span class="themoney" style="text-align: center; font-size: 34px;">200.000
+                            <span style="font-size: 20px;">Fr</span>
+                        </span>
+                        <span style="font-size: 13px; text-align: right;">Ce mois ci,</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="cout mx-5">
+                <div class="apphebdomadaire">
+                    <span class="vosappareils "><a style="text-decoration: none; color: #091b4d;" href="">Vos appareils
+                        <i class="fa-solid fa-circle-arrow-right"  style=" color:#091b4d;"></i></a>
+                    </span>
+                    <span class="hebdomadaire ">hebdomadaire 
+                        <i class="fa-solid fa-angle-down mt-4"  style=" color:#091b4d;"></i>
+                    </span>
+
+                    <div class="common1 mt-3">
+                        <div class="cons">
+                           <span style="font-weight: bold; font-size: 14px;">Vous avez consommé</span>
+                            <span class="theenergy" style="text-align: center; font-size: 48px;">150
+                            <span style="font-size: 20px;">kWh</span>
+                            </span>
+                        <span style="font-size: 13px; text-align: right;" >Cette semaine ci,</span>
+                        </div>
+                        <div class="cost">
+                            <span style="font-weight: bold; font-size: 14px;">Cout energétique</span>
+                        <span class="themoney " style="text-align: center; font-size: 34px;">50000
+                            <span style="font-size: 20px;">Fr</span>
+                        </span>
+                        <span style="font-size: 13px; text-align:right;">Cette semaine ci,</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{% static 'js/premiergraphique.js' %}"></script>
+    <script src="{% static 'js/deuxiemegraphique.js' %}"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>  
+    
+
+
+
