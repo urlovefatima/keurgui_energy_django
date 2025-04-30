@@ -200,7 +200,7 @@ body {
 /* Section Historique */
 
 .history-section {
-     width: calc(100% - 930px); 
+   flex:2.2;
 }
 
 

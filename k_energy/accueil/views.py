@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import PieceAccueil, Appaccueil
+from app.models import Device
 
 pieces = [
         PieceAccueil("Salon", "20m²", "img/salon.png"),
@@ -21,10 +22,12 @@ appareils = [
         Appaccueil("Humidifieur", "img/humidifier.webp", "cuisine"),
     ]
 
-data = {"lespieces": pieces, "appauto": appareils}
+
 
 def afficher_accueil(request):
-    return render(request, "Accueil.html", context = data)
+    devices = Device.objects.all()
+    data = {"lespieces": pieces, "appauto": appareils,"devices":devices}
+    return render(request, "Accueil.html", data)
 
 
 

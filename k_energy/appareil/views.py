@@ -1,20 +1,23 @@
 from django.shortcuts import render
 from .models import Appareil, Piece
 from .forms import AppareilForm, PieceForm
+from app.models import Device
 
 # Create your views here.
 
 def appareilsView(request):
     appareils = Appareil.objects.all()
+    devices = Device.objects.all()
     temp_name = 'appareils.html'
-    context = {'appareils': appareils}
+    context = {'appareils': appareils,'devices':devices}
     return render(request, temp_name, context)
 
 def piecesView(request):
     pieces = Piece.objects.all()
     appareils = Appareil.objects.all()
+    devices = Device.objects.all()
     temp_name = 'pieces.html'
-    context = {'pieces': pieces, 'appareils': appareils}
+    context = {'pieces': pieces, 'appareils': appareils,'devices':devices}
     return render(request, temp_name, context)
 
 

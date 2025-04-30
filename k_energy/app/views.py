@@ -16,6 +16,7 @@ def afficher_page_reset_mdp(request):
     return render(request, "reset_password.html")
 
 def afficher_pieces(request):
+     
     return render(request, "pieces.html")
 
 def afficher_cons_piece(request):

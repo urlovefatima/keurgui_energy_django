@@ -14,10 +14,10 @@
     color: #343a40;
   }
   
-  /* Styles pour le tableau d'historique */
-  .table {
+/*  /*  /* Styles pour le tableau d'historique */
+   .table {
     margin-bottom: 0;
-  }
+  } 
   
   .table td {
     padding: 12px 16px;
