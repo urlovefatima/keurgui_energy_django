@@ -1,19 +1,11 @@
 from django.contrib import admin
 from django.urls import path
 from app import views
-<<<<<<< HEAD
-from accueil.views import afficher_accueil, afficher_splashScreen, ajouter_piece, mdp_change
-from appareil.views import appareilsView, piecesView, ajout_appareil, ajout_piece
-from django.conf import settings
-from django.conf.urls.static import static
-
-=======
 from accueil.views import afficher_accueil, afficher_splashScreen, ajouter_piece, mdp_change, afficher_historique
 from appareil.views import appareilsView, piecesView, ajout_appareil, ajout_piece
 from django.conf import settings
 from django.conf.urls.static import static
 from authenticate.views import register_step_one, register_step_two, connexion, logout_view
->>>>>>> e0df968938f99288701749fe5484c28d6eb3e3b8
 
 urlpatterns = [
     path('admin/', admin.site.urls, name='page_admin'),
@@ -33,9 +25,6 @@ urlpatterns = [
     path('notifications/', views.notifications_view, name='notifications'),
     path('ajout_appareil/', ajout_appareil, name='ajout_appareil'),
     path('ajout_piece/', ajout_piece, name='ajout_piece'),
-<<<<<<< HEAD
-=======
-    path('logout/', logout_view, name='logout'),
->>>>>>> e0df968938f99288701749fe5484c28d6eb3e3b8
+    path('logout/', logout_view, name='logout')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

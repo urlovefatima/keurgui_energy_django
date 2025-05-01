@@ -148,9 +148,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-<<<<<<< HEAD
-=======
-
 LOGIN_URL = '/connexion/'  # ou le nom de l'URL de connexion
 LOGIN_REDIRECT_URL = '/'
->>>>>>> e0df968938f99288701749fe5484c28d6eb3e3b8
